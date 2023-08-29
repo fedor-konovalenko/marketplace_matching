@@ -45,8 +45,18 @@ ________
 - корреляции между признаками практически нет (см. рисунок 1)
 - Практически все признаки распределены нормально (см. рисунок 2)
 - некоторые признаки (21, 25, 70) по сути являются константами (одинаковы для всех векторов) (рисунок 3)
+  
+<img src="https://github.com/fedor-konovalenko/marketplace_matching/blob/main/img/heatmap.png" width="500" height="500">
 
-![]
+*Рисунок 1*
+
+<img src="https://github.com/fedor-konovalenko/marketplace_matching/blob/main/img/hist_1.png" width="500" height="500">
+
+*Рисунок 2*
+
+<img src="https://github.com/fedor-konovalenko/marketplace_matching/blob/main/img/hist_25.png" width="500" height="500">
+
+*Рисунок 3*
 
 **Предобработка**
 - масштабирование
