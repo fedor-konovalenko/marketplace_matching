@@ -20,7 +20,7 @@ MODEL = joblib.load('model_LR_S.joblib')
 with open('common_index_sh.pkl', 'rb') as f:
     DATA_INDEX = pickle.load(f)
 
-#SCALER = joblib.load('scaler.save')
+SCALER = joblib.load('scaler.save')
 
 #with open('features.npy', 'rb') as f:
   #DATA_FEATURES = np.load(f)
@@ -70,9 +70,9 @@ def match_5(path: str):
         status = 'not valid data'
         m_logger.error(f'problems with array shape {status}')
         return [], status
-    scale = max(abs(min(query)), max(query))
-    pre_query = query / scale
-    matrix = rude_search(pre_query.reshape(-1, 1), K_RUDE)
+    #scale = max(abs(min(query)), max(query))
+    pre_query = SCALER.transform(query.reshape(1, -1))
+    matrix = rude_search(pre_query, K_RUDE)
     result = fine_search(matrix, K_FINE)
     if len(result) == 5:
         status = 'success'
