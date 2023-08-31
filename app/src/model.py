@@ -28,7 +28,7 @@ CONST_FEATURES = [70, 25, 21]
   
 FAISS_INDEX = faiss.read_index("index_sh.bin")
 
-K_RUDE = 100
+K_RUDE = 20
 K_FINE = 5
 
 def rude_search(vector: np.array, kr) -> np.array:
@@ -51,7 +51,7 @@ def fine_search(features: np.array, kf):
     answer = pd.DataFrame({'id':features[:, 1].astype('int').tolist(), 
                            'probability':prob_pred_1.tolist()})
     top_5 = answer.sort_values(by='probability', ascending=False)[:kf]['id']
-    return top_5.to_json()
+    return top_5
     
 def match_5(path: str):
     '''main process function'''
@@ -75,7 +75,8 @@ def match_5(path: str):
     matrix = rude_search(pre_query, K_RUDE)
     result = fine_search(matrix, K_FINE)
     if len(result) == 5:
-        status = 'success'
+        status = 'success. your query matches with:'
+        result = result.to_json()
         m_logger.info(f'bingo!! {status}')
     else:
         status = 'matching error'
