@@ -136,7 +136,7 @@ ______________
 | Модель|Accuracy@20 |Accuracy@5 |
 |---|---|---|
 |LogisticRegression|0,73|0,33|
-|LogisticRegresiion (n_features=1)|0,74|0,68|
+|LogisticRegresiion (n_features=1)|0,73|0,68|
 |CatBoostRanker|0,73|0,68|
 |CatBoostClassifier|0,73|0,70|
 
