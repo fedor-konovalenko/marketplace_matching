@@ -6,6 +6,7 @@ Project related with unsupervised/semi-supervised ML for Yandex Practicum Studio
 - matching_part_1.ipynb, matching_part_2.ipynb - ноутбуки с экспериментами
 - /img - изображения
 - /example - папка с тестовыми файлами примеров
+- mathing_final.pdf - финальная презентация
 __________________
 
 ## Постановка задачи
